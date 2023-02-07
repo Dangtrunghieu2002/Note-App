@@ -30,9 +30,9 @@ const createNoteView = (note) => {
 
     textDiv.append(titleP)
     textDiv.append(bodyP)
-    textDiv.append(textDiv)
-    textDiv.append(editButton)
-    textDiv.append(deleteButton)
+    noteDiv.append(textDiv)
+    noteDiv.append(editButton)
+    noteDiv.append(deleteButton)
     editButton.onclick = () => editNote(noteDiv);
     deleteButton.onclick = () => deleteNote(noteDiv);
     return noteDiv;
@@ -61,7 +61,7 @@ const editNote = (noteDiv, editSave = false) => {
     const bodyP = noteDiv.querySelector('p.body');
     bodyP.contentEditable = true;
 
-    const editButton = note.querySelector('button.edit');
+    const editButton = noteDiv.querySelector('button.edit');
     editButton.innerHTML = 'Save Note';
     const deleteButton = noteDiv.querySelector('button.delete');
     deleteButton.innerHTML = 'Cancel Edit';
@@ -84,7 +84,7 @@ const editNote = (noteDiv, editSave = false) => {
 const saveNote = () => {
     const titleInput = document.querySelector('input#title');
     const bodyInput = document.querySelector('input#body');
-    const bgColor = document.querySelector('select');
+    const bgColorInput = document.querySelector('select');
     const id = new Date().getTime();
     const note = {
         id, title: titleInput.value, body: bodyInput.value, bgColor: bgColorInput.value

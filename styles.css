@@ -42,6 +42,13 @@ button, select {
     color: #fff;
 }
 
+button:hover {
+    transform: scale(1.1);
+}
+
+select:hover {
+    transform: scale(1.1);
+}
 .add {
     background: #3399ff;
 }
@@ -51,5 +58,5 @@ button, select {
 }
 
 .edit, select {
-    background: #339933;
+    background: #963399;
 }
